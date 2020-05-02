@@ -270,3 +270,29 @@ function deregister_js3() {
 }
 add_action( 'get_footer', 'deregister_js3', 100 );
 */
+
+
+/* =============================
+Registrar custom gutenberg block
+============================= */
+function pgRegisterBlock() {
+	$assets = include_once get_template_directory_uri().'blocks/build/index.asset.php';
+
+	// registramos script
+	wp_register_script(
+		'pg-block',
+		get_template_directory_uri().'blocks/build/index.js',
+		$assets['dependencies'],
+		$asstets['version']
+	);
+
+	// registramos bloque
+	register_block_type(
+		'pg/basic', //slug
+		array(
+			'editor_script' => 'pg-block' //handler de cuando registramos el script
+		)
+	);
+}
+
+add_action( 'init', 'pgRegisterBlock');
