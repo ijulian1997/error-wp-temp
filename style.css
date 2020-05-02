@@ -1,0 +1,20 @@
+/*
+Theme name: PlatziGifts
+VErsion: 1.0
+Description: Sitio para catalogo de productos de Platzi
+Author: Julian Vidal
+Author URI: megadecibeles.com
+License: GNU General Public License v2 or latest
+License URI: http://www.gnu.org/licenses/old-licenses/gpl-2.0.html
+*/
+
+header, footer{
+	background-color: #000;
+	color: #fff;
+}
+
+@media all and (min-width: 981px) {
+	.vh100 {
+		min-height: 90vh;
+	}
+}
