@@ -276,14 +276,14 @@ add_action( 'get_footer', 'deregister_js3', 100 );
 Registrar custom gutenberg block
 ============================= */
 function pgRegisterBlock() {
-	$assets = include_once get_template_directory_uri().'blocks/build/index.asset.php';
+	$assets = include_once get_template_directory_uri().'/blocks/build/index.asset.php';
 
 	// registramos script
 	wp_register_script(
 		'pg-block',
-		get_template_directory_uri().'blocks/build/index.js',
+		get_template_directory_uri().'/blocks/build/index.js',
 		$assets['dependencies'],
-		$asstets['version']
+		$assets['version']
 	);
 
 	// registramos bloque
